@@ -1,13 +1,19 @@
-name: CI
+name: Plugin CI
 
 on:
   push:
+    paths:
+      - 'plugins/weather/**'
+      - '.github/workflows/plugin-ci.yml'
     branches: [main]
   pull_request:
+    paths:
+      - 'plugins/weather/**'
+      - '.github/workflows/plugin-ci.yml'
     branches: [main]
 
 jobs:
-  build-and-test:
+  plugin-ci:
     runs-on: ubuntu-latest
 
     steps:
@@ -17,13 +23,16 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: '20'
 
-      - name: Install dependencies
-        run: yarn install
+      - name: Enable Corepack (for Yarn 4+)
+        run: corepack enable
 
-      - name: Run lint
-        run: yarn lint
+      - name: Install dependencies (immutable)
+        run: yarn install --immutable
 
-      - name: Run tests
-        run: yarn test
+      - name: Build plugin
+        run: yarn workspace @infosys_ltd/daily-weather-plugin build
+
+      - name: Run plugin tests
+        run: yarn workspace @infosys_ltd/daily-weather-plugin test
