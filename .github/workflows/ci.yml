@@ -1,19 +1,12 @@
-name: Plugin CI
+name: Main Branch CI
 
 on:
   push:
-    paths:
-      - 'plugins/weather/**'
-      - '.github/workflows/plugin-ci.yml'
-    branches: [main]
-  pull_request:
-    paths:
-      - 'plugins/weather/**'
-      - '.github/workflows/plugin-ci.yml'
-    branches: [main]
+    branches:
+      - main
 
 jobs:
-  plugin-ci:
+  build-and-test:
     runs-on: ubuntu-latest
 
     steps:
@@ -29,10 +22,10 @@ jobs:
         run: corepack enable
 
       - name: Install dependencies
-        run: yarn install --immutable --mode=skip-builds
+        run: yarn install --immutable
 
       - name: Build plugin
         run: yarn workspace @infosys_ltd/daily-weather-plugin build
 
-      - name: Run plugin tests
+      - name: Run tests
         run: yarn workspace @infosys_ltd/daily-weather-plugin test
