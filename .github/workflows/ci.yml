@@ -28,8 +28,8 @@ jobs:
       - name: Enable Corepack (for Yarn 4+)
         run: corepack enable
 
-      - name: Install dependencies (immutable)
-        run: yarn install --immutable
+      - name: Install dependencies
+        run: yarn install --immutable --mode=skip-builds
 
       - name: Build plugin
         run: yarn workspace @infosys_ltd/daily-weather-plugin build
