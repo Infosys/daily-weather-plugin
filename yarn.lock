@@ -6865,7 +6865,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@infosys_ltd/daily-weather-plugin@npm:1.0.2, @infosys_ltd/daily-weather-plugin@workspace:plugins/weather":
+"@infosys_ltd/daily-weather-plugin@npm:1.0.2":
+  version: 1.0.2
+  resolution: "@infosys_ltd/daily-weather-plugin@npm:1.0.2"
+  dependencies:
+    "@backstage/core-components": "npm:^0.16.4"
+    "@backstage/core-plugin-api": "npm:^1.10.4"
+    "@backstage/theme": "npm:^0.6.4"
+    "@material-ui/core": "npm:^4.9.13"
+    "@material-ui/icons": "npm:^4.9.1"
+    "@material-ui/lab": "npm:^4.0.0-alpha.61"
+    react-use: "npm:^17.2.4"
+  peerDependencies:
+    react: ^16.13.1 || ^17.0.0 || ^18.0.0
+  checksum: 10c0/5e509283752b4058a9b951cdfb4bda4adc4a23ce07de10fb026e3a65bef40615758c8d28df2cdb486dd7ecff36b3d83a456749697cbcdcd54ffa8ae63ad2ec43
+  languageName: node
+  linkType: hard
+
+"@infosys_ltd/daily-weather-plugin@workspace:plugins/weather":
   version: 0.0.0-use.local
   resolution: "@infosys_ltd/daily-weather-plugin@workspace:plugins/weather"
   dependencies:
