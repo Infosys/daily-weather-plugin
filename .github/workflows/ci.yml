@@ -24,8 +24,5 @@ jobs:
       - name: Install dependencies
         run: yarn install --immutable
 
-      - name: Build plugin
-        run: yarn workspace @infosys_ltd/daily-weather-plugin build
-
       - name: Run tests
         run: yarn workspace @infosys_ltd/daily-weather-plugin test
