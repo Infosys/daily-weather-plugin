@@ -6,7 +6,7 @@ metadata:
   annotations:
     github.com/project-slug: Infosys/daily-weather-plugin
     backstage.io/techdocs-ref: dir:.
-    jenkins.io/job-full-name: backstage coe job
+    jenkins.io/job-full-name: daily-weather-plugin-deploy-job
     jenkins.io/override-base-url: "http://172.23.87.184:8080"
   tags: [plugin, weather, utility, frontend]
 spec:
@@ -15,6 +15,7 @@ spec:
   owner: group:admin-group 
   ownedBy: [group:ADMCOE-Team, group:admin-group, group:dev-group]
   dependsOn: []
+
 
 
 
